@@ -1,6 +1,9 @@
 from flask import Flask, jsonify
+from flask_sqlalchemy import SQLAlchemy
 import logging
 import os
+
+db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
@@ -12,6 +15,11 @@ def create_app():
     # Set up logging
     logging.basicConfig(filename='logs/app.log', level=logging.INFO, 
                         format='%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
+    
+    # Database configuration
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db.init_app(app)
     
     @app.route('/')
     def home():
