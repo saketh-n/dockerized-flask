@@ -17,6 +17,9 @@ Through this project, I gained hands-on experience with:
 - Using Docker Compose to manage multi-container applications.
 - Implementing best practices for a production-ready Docker setup, including multi-stage builds and environment variable management.
 - Understanding the importance of containerization in ensuring consistent and reproducible development environments.
+- Integrating a PostgreSQL database with Flask.
+- Setting up a reverse proxy with Nginx.
+- Creating and using Docker networks for service isolation.
 
 ## Why Use Docker?
 
@@ -58,7 +61,7 @@ Docker offers several key benefits that make it a valuable tool in modern softwa
    docker-compose up --build
    ```
 
-2. Access the application at `http://localhost:5000`
+2. Access the application at `http://localhost:80`
 
 ### Stopping the Application
 
@@ -83,6 +86,9 @@ Docker offers several key benefits that make it a valuable tool in modern softwa
 - **Environment Variables**: Managed through Docker Compose for better configuration management.
 - **.dockerignore File**: Added to exclude unnecessary files from the Docker build context.
 - **Multi-Stage Builds**: Used to reduce the size of the final Docker image.
+- **PostgreSQL Database**: Integrated a PostgreSQL database for persistent data storage.
+- **Nginx Reverse Proxy**: Set up Nginx as a reverse proxy to forward requests to the Flask application.
+- **Docker Networks**: Created custom Docker networks to isolate services and improve security.
 
 ## Conclusion
 
